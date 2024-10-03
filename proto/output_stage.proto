@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pmx.factory.output_stage;
+
+message PmxOutputStage {
+  uint32 id = 1;
+  string name = 2;
+  uint32 left_channel_strip_id = 3;
+  uint32 right_channel_strip_id = 4;
+  uint32 cross_fader_plugin_id = 5;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pmx.factory.channel_strip;
+
+enum PmxChannelStripType {
+  Basic = 0;
+  CrossFaded = 1;
+}
+
+message PmxChannelStrip {
+  uint32 id = 1;
+  string name = 2;
+  PmxChannelStripType channel_type = 3;
+  optional uint32 cross_fader_plugin_id = 4;
+  uint32 saturator_plugin_id = 5;
+  uint32 compressor_plugin_id = 6;
+  uint32 equalizer_plugin_id = 7;
+  uint32 gain_plugin_id = 8;
+}

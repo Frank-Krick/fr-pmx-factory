@@ -1,0 +1,19 @@
+syntax = "proto3";
+import "proto/channel_strip.proto";
+import "proto/output_stage.proto";
+
+package pmx.factory;
+
+message CreateChannelStripRequest {
+  string name = 1;
+  pmx.factory.channel_strip.PmxChannelStripType channel_type = 2;
+}
+
+message CreateOutputStageRequest {
+  string name = 1;
+}
+
+service PmxFactory {
+  rpc CreateChannelStrip(CreateChannelStripRequest) returns (pmx.factory.channel_strip.PmxChannelStrip);
+  rpc CreateOutputStage(CreateOutputStageRequest) returns (pmx.factory.output_stage.PmxOutputStage);
+}
